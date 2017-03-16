@@ -1,3 +1,10 @@
-<h1>
-  {{title}}
-</h1>
+<div class="container">
+  <h1>{{title}}</h1>
+  <h3>{{description}}</h3>
+  <ul>
+    <li *ngFor="let goal of goals$ | async">{{goal}}</li>
+  </ul>
+  <button (click)="showDetails = !showDetails">Toggle description</button>
+  <p *ngIf="showDetails">Some description text, some description text, some description text, some description text, some description text, some description text, some description text, some description text</p>
+  <app-inner></app-inner>
+</div>
